@@ -3,7 +3,7 @@
 # Game Launcher Cloud - Manager for Godot
 ### **The Next-Generation Custom Game Launchers Creator Platform**
 
-<img width="2800" height="720" alt="Game Launcher Cloud for Godot - Full Logo with Background" src="https://github.com/user-attachments/assets/b54c9b97-dac8-4e90-aa6e-81deafc4daed" />
+<img width="2800" height="720" alt="Game Launcher Cloud for Godot Game Engine - Full Logo with Background" src="https://github.com/user-attachments/assets/2be3e88f-bdc2-4771-9c8b-a77c63d819bd" />
 
 **Build and upload your game from Godot Engine to Game Launcher Cloud!**
 

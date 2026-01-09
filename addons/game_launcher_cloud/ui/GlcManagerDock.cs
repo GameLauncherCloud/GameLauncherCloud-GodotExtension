@@ -175,9 +175,9 @@ public partial class GlcManagerDock : Control
         _presetDropdown?.Connect("item_selected", Callable.From<long>(OnPresetSelected));
 
         // Build actions
-        _buildUploadButton?.Connect("pressed", Callable.From(() => _ = BuildAndUploadAsync()));
-        _buildOnlyButton?.Connect("pressed", Callable.From(() => _ = BuildOnlyAsync()));
-        _uploadOnlyButton?.Connect("pressed", Callable.From(() => _ = UploadOnlyAsync()));
+        _buildUploadButton?.Connect("pressed", Callable.From(OnBuildUploadPressed));
+        _buildOnlyButton?.Connect("pressed", Callable.From(OnBuildOnlyPressed));
+        _uploadOnlyButton?.Connect("pressed", Callable.From(OnUploadOnlyPressed));
 
         var openExportButton = GetNodeOrNull<Button>("MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ActionButtons/OpenExportButton");
         openExportButton?.Connect("pressed", Callable.From(() => EditorInterface.Singleton.PopupDialogCentered(CreateExportHintDialog())));
@@ -298,6 +298,11 @@ public partial class GlcManagerDock : Control
 
     private void SetProgress(bool visible, string message = "", float progress = 0f)
     {
+        CallDeferred(MethodName.SetProgressDeferred, visible, message, progress);
+    }
+
+    private void SetProgressDeferred(bool visible, string message, float progress)
+    {
         if (_progressContainer != null)
         {
             _progressContainer.Visible = visible;
@@ -316,6 +321,11 @@ public partial class GlcManagerDock : Control
 
     private void SetMessage(string message, bool isError = false)
     {
+        CallDeferred(MethodName.SetMessageDeferred, message, isError);
+    }
+
+    private void SetMessageDeferred(string message, bool isError)
+    {
         if (_buildMessage != null)
         {
             _buildMessage.Text = message;
@@ -324,6 +334,11 @@ public partial class GlcManagerDock : Control
     }
 
     private void SetButtonsEnabled(bool enabled)
+    {
+        CallDeferred(MethodName.SetButtonsEnabledDeferred, enabled);
+    }
+
+    private void SetButtonsEnabledDeferred(bool enabled)
     {
         if (_buildUploadButton != null)
         {
@@ -596,6 +611,21 @@ public partial class GlcManagerDock : Control
     #endregion
 
     #region Build & Upload
+
+    private void OnBuildUploadPressed()
+    {
+        _ = BuildAndUploadAsync();
+    }
+
+    private void OnBuildOnlyPressed()
+    {
+        _ = BuildOnlyAsync();
+    }
+
+    private void OnUploadOnlyPressed()
+    {
+        _ = UploadOnlyAsync();
+    }
 
     private async Task BuildAndUploadAsync()
     {

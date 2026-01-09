@@ -5,30 +5,30 @@
   "godot": "4.0",
   "description": "Build and upload your Godot game patches directly to Game Launcher Cloud platform. Features include API key authentication, one-click build & upload, real-time progress tracking, and multipart upload support for large files.",
   "keywords": [
-    "game launcher cloud",
-    "patch",
-    "build",
-    "upload",
-    "distribution",
-    "game development",
-    "deployment",
+	"game launcher cloud",
+	"patch",
+	"build",
+	"upload",
+	"distribution",
+	"game development",
+	"deployment",
     "godot"
   ],
   "category": "Tools",
   "author": {
-    "name": "Game Launcher Cloud",
-    "email": "support@gamelauncher.cloud",
-    "url": "https://gamelauncher.cloud"
+	"name": "Game Launcher Cloud",
+	"email": "support@gamelauncher.cloud",
+	"url": "https://gamelauncher.cloud"
   },
   "license": "MIT",
   "homepage": "https://gamelauncher.cloud",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/GameLauncherCloud/GameLauncherCloud-GodotExtension.git"
+	"type": "git",
+	"url": "https://github.com/GameLauncherCloud/GameLauncherCloud-GodotExtension.git"
   },
   "bugs": {
-    "url": "https://github.com/GameLauncherCloud/GameLauncherCloud-GodotExtension/issues",
-    "email": "support@gamelauncher.cloud"
+	"url": "https://github.com/GameLauncherCloud/GameLauncherCloud-GodotExtension/issues",
+	"email": "support@gamelauncher.cloud"
   },
   "documentation": "https://help.gamelauncher.cloud",
   "changelogUrl": "https://github.com/GameLauncherCloud/GameLauncherCloud-GodotExtension/blob/main/CHANGELOG.md"

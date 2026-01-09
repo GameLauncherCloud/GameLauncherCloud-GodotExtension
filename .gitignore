@@ -14,3 +14,8 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Builds
+GLC_Upload/
+Builds/
+addons/game_launcher_cloud/glc_config.json

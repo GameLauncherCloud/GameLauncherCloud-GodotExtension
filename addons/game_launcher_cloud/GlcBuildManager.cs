@@ -206,9 +206,14 @@ public class GlcBuildManager
 
             GD.Print($"[GLC] Running: {godotPath} {string.Join(" ", arguments)}");
 
-            // Run export in background
-            var output = new Godot.Collections.Array();
-            var exitCode = OS.Execute(godotPath, arguments.ToArray(), output, true, true);
+            // Run export in background without blocking the UI
+            int exitCode = 0;
+            Godot.Collections.Array output = new();
+            
+            await Task.Run(() =>
+            {
+                exitCode = OS.Execute(godotPath, arguments.ToArray(), output, true, false);
+            });
 
             if (exitCode == 0)
             {

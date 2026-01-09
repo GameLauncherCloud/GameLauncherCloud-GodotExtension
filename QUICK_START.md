@@ -115,4 +115,3 @@ Your game build has been uploaded to Game Launcher Cloud and is being processed.
 2. Click **Download and Install** for your Godot version
 3. Wait for the download to complete
 4. Try exporting again
-

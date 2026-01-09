@@ -1,0 +1,18 @@
+{
+  "api_key_production": "glc_XgwrThfFTUEBKyoxC2plpoyEoZurQPxxnrPztee0gMqjIZ4LHxjpFhssi1qZbnLk",
+  "api_key_staging": "",
+  "api_key_development": "",
+  "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5MWRkNzM1Yi1mMWY4LTQ2NjgtODk0NS1hNTM5Zjc1NDI3ZmEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjkzZTdmNzRmLWE1MDQtNGUyNi05NGJmLWJlY2QzZTI5NjcwYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImNhcmxvc2FydHVyb3JzQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzY4NTQyNjI1LCJpc3MiOiJodHRwczovL2FwaS5nYW1lbGF1bmNoZXIuY2xvdWQiLCJhdWQiOiJodHRwczovL2FwcC5nYW1lbGF1bmNoZXIuY2xvdWQifQ.lJ3EtOk3EC1LikzQ4e8-rn5G5WOdMFBcKxAF0ymWiCk",
+  "user_id": "93e7f74f-a504-4e26-94bf-becd3e29670a",
+  "user_email": "carlosarturors@gmail.com",
+  "user_plan": "Enterprise",
+  "selected_app_id": 0,
+  "selected_app_name": null,
+  "remember_me": true,
+  "build_notes": null,
+  "last_build_path": "",
+  "selected_export_preset": 0,
+  "environment": 0,
+  "show_developer_options": false,
+  "is_authenticated": true
+}

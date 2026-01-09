@@ -1,0 +1,323 @@
+[gd_scene load_steps=3 format=3 uid="uid://glc_manager_dock"]
+
+[ext_resource type="Script" path="res://addons/game_launcher_cloud/ui/GlcManagerDock.cs" id="1_dock"]
+[ext_resource type="Texture2D" uid="uid://c1vvktonwsc3h" path="res://addons/game_launcher_cloud/icons/glc_icon.png" id="2_icon"]
+
+[node name="GlcManagerDock" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dock")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="PanelContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="HeaderContent" type="HBoxContainer" parent="MainContainer/Header"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MainContainer/Header/HeaderContent"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleContainer" type="VBoxContainer" parent="MainContainer/Header/HeaderContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="MainContainer/Header/HeaderContent/TitleContainer"]
+layout_mode = 2
+text = "Game Launcher Cloud"
+theme_type_variation = &"HeaderLarge"
+
+[node name="Subtitle" type="Label" parent="MainContainer/Header/HeaderContent/TitleContainer"]
+layout_mode = 2
+text = "Custom Launcher Creation Platform"
+theme_type_variation = &"HeaderSmall"
+
+[node name="StatusContainer" type="VBoxContainer" parent="MainContainer/Header/HeaderContent"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="MainContainer/Header/HeaderContent/StatusContainer"]
+layout_mode = 2
+text = "Not connected"
+
+[node name="UserLabel" type="Label" parent="MainContainer/Header/HeaderContent/StatusContainer"]
+layout_mode = 2
+text = ""
+theme_type_variation = &"HeaderSmall"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentContainer" type="VBoxContainer" parent="MainContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LoginSection" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="LoginHeader" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection"]
+layout_mode = 2
+text = "🔐 Login"
+theme_type_variation = &"HeaderMedium"
+
+[node name="LoginInfo" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection"]
+layout_mode = 2
+text = "Connect your account to publish game builds and manage custom launchers."
+autowrap_mode = 2
+
+[node name="ApiKeyLabel" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection"]
+layout_mode = 2
+text = "API Key"
+
+[node name="ApiKeyInput" type="LineEdit" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection"]
+layout_mode = 2
+placeholder_text = "Enter your API Key..."
+secret = true
+
+[node name="ApiKeyHint" type="HBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection"]
+layout_mode = 2
+
+[node name="HintLabel" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection/ApiKeyHint"]
+layout_mode = 2
+text = "Don't have an API Key?"
+
+[node name="GetApiKeyButton" type="LinkButton" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection/ApiKeyHint"]
+layout_mode = 2
+text = "Get one here →"
+
+[node name="LoginButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection"]
+layout_mode = 2
+text = "Connect Account"
+
+[node name="LoginMessage" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/LoginSection"]
+layout_mode = 2
+text = ""
+autowrap_mode = 2
+
+[node name="Separator1" type="HSeparator" parent="MainContainer/ScrollContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="BuildUploadSection" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer"]
+visible = false
+layout_mode = 2
+
+[node name="BuildHeader" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+layout_mode = 2
+text = "🚀 Build & Upload"
+theme_type_variation = &"HeaderMedium"
+
+[node name="CliWarning" type="HBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+layout_mode = 2
+
+[node name="WarningIcon" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/CliWarning"]
+layout_mode = 2
+text = "⚠️"
+
+[node name="WarningContainer" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/CliWarning"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WarningText" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/CliWarning/WarningContainer"]
+layout_mode = 2
+text = "For large builds (>5GB), consider using the CLI for better performance and reliability."
+autowrap_mode = 2
+
+[node name="CliLinkButton" type="LinkButton" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/CliWarning/WarningContainer"]
+layout_mode = 2
+text = "Download CLI"
+
+[node name="AppSelectionContainer" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+layout_mode = 2
+
+[node name="AppLabel" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/AppSelectionContainer"]
+layout_mode = 2
+text = "Target Application"
+
+[node name="AppDropdown" type="OptionButton" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/AppSelectionContainer"]
+layout_mode = 2
+
+[node name="AppButtons" type="HBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/AppSelectionContainer"]
+layout_mode = 2
+
+[node name="RefreshAppsButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/AppSelectionContainer/AppButtons"]
+layout_mode = 2
+text = "🔄 Refresh Apps"
+
+[node name="ManageAppButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/AppSelectionContainer/AppButtons"]
+layout_mode = 2
+text = "⚙️ Manage App"
+
+[node name="LoadAppsButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/AppSelectionContainer"]
+layout_mode = 2
+text = "📱 Load My Apps"
+
+[node name="ExportPresetContainer" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+layout_mode = 2
+
+[node name="PresetLabel" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ExportPresetContainer"]
+layout_mode = 2
+text = "Export Preset"
+
+[node name="PresetDropdown" type="OptionButton" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ExportPresetContainer"]
+layout_mode = 2
+
+[node name="RefreshPresetsButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ExportPresetContainer"]
+layout_mode = 2
+text = "🔄 Refresh Presets"
+
+[node name="BuildNotesContainer" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+layout_mode = 2
+
+[node name="NotesLabel" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildNotesContainer"]
+layout_mode = 2
+text = "Build Notes"
+
+[node name="NotesHint" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildNotesContainer"]
+layout_mode = 2
+text = "Document version changes, new features, and bug fixes for your players."
+theme_type_variation = &"HeaderSmall"
+
+[node name="BuildNotesInput" type="TextEdit" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildNotesContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+placeholder_text = "Enter build notes..."
+
+[node name="BuildStatusContainer" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+visible = false
+layout_mode = 2
+
+[node name="StatusHeader" type="HBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildStatusContainer"]
+layout_mode = 2
+
+[node name="StatusIcon" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildStatusContainer/StatusHeader"]
+layout_mode = 2
+text = "✅"
+
+[node name="StatusInfo" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildStatusContainer/StatusHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatusTitle" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildStatusContainer/StatusHeader/StatusInfo"]
+layout_mode = 2
+text = "Build Ready"
+
+[node name="StatusDetails" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildStatusContainer/StatusHeader/StatusInfo"]
+layout_mode = 2
+text = "Last build: ..."
+theme_type_variation = &"HeaderSmall"
+
+[node name="StatusSize" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildStatusContainer/StatusHeader/StatusInfo"]
+layout_mode = 2
+text = "Size: ..."
+theme_type_variation = &"HeaderSmall"
+
+[node name="ShowInExplorerButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/BuildStatusContainer"]
+layout_mode = 2
+text = "📁 Show in Explorer"
+
+[node name="ActionButtons" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+layout_mode = 2
+
+[node name="BuildUploadButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ActionButtons"]
+layout_mode = 2
+text = "🚀 Build & Publish"
+
+[node name="SeparateBuildButtons" type="HBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ActionButtons"]
+visible = false
+layout_mode = 2
+
+[node name="BuildOnlyButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ActionButtons/SeparateBuildButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🔨 Build"
+
+[node name="UploadOnlyButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ActionButtons/SeparateBuildButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "☁️ Upload"
+
+[node name="OpenExportButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ActionButtons"]
+layout_mode = 2
+text = "🔧 Open Export Settings"
+
+[node name="ProgressContainer" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+visible = false
+layout_mode = 2
+
+[node name="ProgressLabel" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ProgressContainer"]
+layout_mode = 2
+text = "Processing..."
+
+[node name="ProgressBar" type="ProgressBar" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection/ProgressContainer"]
+layout_mode = 2
+
+[node name="BuildMessage" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+layout_mode = 2
+text = ""
+autowrap_mode = 2
+
+[node name="ViewBuildButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/BuildUploadSection"]
+visible = false
+layout_mode = 2
+text = "🔗 View Build in Dashboard"
+
+[node name="Separator2" type="HSeparator" parent="MainContainer/ScrollContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="LinksSection" type="VBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="LinksHeader" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/LinksSection"]
+layout_mode = 2
+text = "About Game Launcher Cloud"
+theme_type_variation = &"HeaderMedium"
+
+[node name="LinksDescription" type="Label" parent="MainContainer/ScrollContainer/ContentContainer/LinksSection"]
+layout_mode = 2
+text = "Create custom game launchers in minutes. Distribute patches, manage versions, and deliver updates directly to your players."
+autowrap_mode = 2
+
+[node name="LinksButtons" type="HBoxContainer" parent="MainContainer/ScrollContainer/ContentContainer/LinksSection"]
+layout_mode = 2
+
+[node name="WebsiteButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/LinksSection/LinksButtons"]
+layout_mode = 2
+text = "🌐 Website"
+
+[node name="DocsButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/LinksSection/LinksButtons"]
+layout_mode = 2
+text = "📚 Documentation"
+
+[node name="DiscordButton" type="Button" parent="MainContainer/ScrollContainer/ContentContainer/LinksSection/LinksButtons"]
+layout_mode = 2
+text = "💬 Discord"
+
+[node name="Footer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="EnvironmentLabel" type="Label" parent="MainContainer/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Environment: Production"
+theme_type_variation = &"HeaderSmall"
+
+[node name="LogoutButton" type="Button" parent="MainContainer/Footer"]
+visible = false
+layout_mode = 2
+text = "Logout"

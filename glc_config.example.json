@@ -1,0 +1,16 @@
+{
+  "api_key_production": "",
+  "api_key_staging": "",
+  "api_key_development": "",
+  "auth_token": "",
+  "user_id": "",
+  "user_email": "",
+  "user_plan": "",
+  "selected_app_id": 0,
+  "selected_app_name": "",
+  "remember_me": true,
+  "build_notes": "",
+  "last_build_path": "",
+  "environment": 0,
+  "show_developer_options": false
+}
